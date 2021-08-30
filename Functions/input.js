@@ -23,14 +23,27 @@ console.log(chalk.bold("-------------"))
 console.log(chalk.bold.green("Setup Complete"))
 readline.close();
 
+// Files //
 const index = require('./CreateFiles/index');
 const config = require('./CreateFiles/config');
 const ready = require('./CreateFiles/ready');
+const interactionCreate = require('./CreateFiles/interactionCreate');
+const slash = require('./CreateFiles/slash');
+const eventsFile = require('./CreateFiles/events');
 
+// Folders //
 const events = require('./CreateFolders/events');
+const handlers = require('./CreateFolders/handlers');
 
+// Folders //
 events()
+handlers()
+
+// Files //
 ready()
+slash()
+eventsFile()
+interactionCreate()
 index(token);
 config(prefix, status);
 
